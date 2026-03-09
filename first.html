@@ -16,8 +16,8 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f5f7fb;
-color:#333;
+background:linear-gradient(135deg,#0f172a,#1e293b,#020617);
+color:white;
 }
 
 /* NAVBAR */
@@ -26,82 +26,83 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+padding:20px 8%;
+background:rgba(0,0,0,0.3);
+backdrop-filter:blur(10px);
 position:sticky;
 top:0;
 }
 
 nav h2{
-color:#2563eb;
+color:#38bdf8;
 }
 
 nav a{
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
-color:#333;
+color:white;
 font-weight:500;
 }
 
 /* HERO */
 
 .hero{
+height:90vh;
 display:flex;
+flex-direction:column;
+justify-content:center;
 align-items:center;
-justify-content:space-between;
-padding:80px 10%;
+text-align:center;
+padding:20px;
 }
 
-.hero-text{
-max-width:500px;
+.hero h1{
+font-size:55px;
 }
 
-.hero-text h1{
-font-size:45px;
-color:#111;
+.hero span{
+color:#38bdf8;
 }
 
-.hero-text span{
-color:#2563eb;
-}
-
-.hero-text p{
+.hero p{
 margin-top:15px;
-font-size:18px;
-color:#555;
+font-size:20px;
+color:#cbd5f5;
 }
 
 .btn{
-margin-top:20px;
-padding:12px 24px;
-background:#2563eb;
-color:white;
+margin-top:25px;
+padding:12px 26px;
+background:#38bdf8;
 border:none;
 border-radius:6px;
 cursor:pointer;
+font-weight:bold;
 }
 
 /* SECTIONS */
 
 section{
-padding:70px 10%;
+max-width:1000px;
+margin:auto;
+padding:80px 20px;
 }
 
 h2{
 text-align:center;
 margin-bottom:40px;
-color:#2563eb;
+color:#38bdf8;
 }
 
 /* CARDS */
 
 .card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:12px;
 margin-bottom:20px;
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.08);
 }
 
 /* SKILLS */
@@ -113,20 +114,25 @@ gap:20px;
 }
 
 .skill{
-background:#eef2ff;
+background:rgba(255,255,255,0.08);
 padding:15px;
 border-radius:8px;
 text-align:center;
-font-weight:500;
 }
 
 /* PROJECTS */
 
 .project{
-background:#eef2ff;
+background:rgba(255,255,255,0.08);
 padding:20px;
-border-radius:8px;
+border-radius:10px;
 margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact p{
+margin-bottom:10px;
 }
 
 /* FOOTER */
@@ -134,8 +140,8 @@ margin-bottom:15px;
 footer{
 text-align:center;
 padding:30px;
-background:#111827;
-color:white;
+background:#020617;
+margin-top:40px;
 }
 
 </style>
@@ -161,17 +167,13 @@ color:white;
 
 <div class="hero">
 
-<div class="hero-text">
-
 <h1>Hello, I'm <span>Mayush</span></h1>
 
-<p>BITM Student passionate about technology and web development.</p>
+<p>BITM Student | Future Web Developer</p>
 
-<p>Studying at KIST College & SS.</p>
+<p>Studying at KIST College & SS</p>
 
 <button class="btn">Download Resume</button>
-
-</div>
 
 </div>
 
@@ -183,8 +185,8 @@ color:white;
 
 <p>
 I am Mayush, currently studying Bachelor in Information Technology
-Management (BITM). I am interested in web development,
-technology, and building digital solutions.
+Management (BITM). I enjoy learning web development, programming,
+and modern technologies.
 </p>
 
 </div>
@@ -201,7 +203,7 @@ technology, and building digital solutions.
 
 <p><strong>College:</strong> KIST College & SS</p>
 
-<p><strong>Focus:</strong> Technology and Business IT</p>
+<p><strong>Interest:</strong> Technology, Programming, Web Development</p>
 
 </div>
 
@@ -230,7 +232,7 @@ technology, and building digital solutions.
 <div class="project">
 
 <h3>Portfolio Website</h3>
-<p>A personal website to showcase my skills.</p>
+<p>Personal website to showcase my skills and projects.</p>
 
 </div>
 
@@ -246,7 +248,7 @@ technology, and building digital solutions.
 
 <h2>Contact</h2>
 
-<div class="card">
+<div class="card contact">
 
 <p>Email: mayush@email.com</p>
 <p>Phone: +977-XXXXXXXX</p>
