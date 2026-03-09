@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,35 @@
 
 <style>
 
+/* =========================
+   Global Styles
+========================= */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: "Poppins", sans-serif;
+font-family:"Poppins", sans-serif;
 scroll-behavior:smooth;
 }
 
-/* Animated background */
-
 body{
-height:100vh;
+min-height:100vh;
 color:white;
 background:linear-gradient(-45deg,#0f172a,#1e293b,#020617,#1e3a8a);
 background-size:400% 400%;
-animation:bg 12s ease infinite;
+animation:bgAnimation 12s ease infinite;
 }
 
-@keyframes bg{
+@keyframes bgAnimation{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
-/* NAVBAR */
+/* =========================
+   Navbar
+========================= */
 
 nav{
 display:flex;
@@ -53,14 +58,16 @@ margin-left:25px;
 text-decoration:none;
 color:white;
 font-weight:500;
-transition:0.3s;
+transition:.3s;
 }
 
 nav a:hover{
 color:#38bdf8;
 }
 
-/* HERO */
+/* =========================
+   Hero Section
+========================= */
 
 .hero{
 height:90vh;
@@ -93,14 +100,16 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 font-weight:bold;
-transition:0.3s;
+transition:.3s;
 }
 
 .btn:hover{
 transform:scale(1.1);
 }
 
-/* SECTION */
+/* =========================
+   Sections
+========================= */
 
 section{
 max-width:1000px;
@@ -114,7 +123,9 @@ margin-bottom:40px;
 color:#38bdf8;
 }
 
-/* GLASS CARDS */
+/* =========================
+   Cards
+========================= */
 
 .card{
 background:rgba(255,255,255,0.05);
@@ -122,14 +133,16 @@ padding:30px;
 border-radius:12px;
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.1);
-transition:0.3s;
+transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-8px);
 }
 
-/* SKILLS */
+/* =========================
+   Skills
+========================= */
 
 .skill{
 margin-bottom:20px;
@@ -148,14 +161,16 @@ width:0;
 transition:2s;
 }
 
-/* PROJECTS */
+/* =========================
+   Projects
+========================= */
 
 .project{
 background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:10px;
 margin-bottom:15px;
-transition:0.3s;
+transition:.3s;
 cursor:pointer;
 }
 
@@ -164,7 +179,9 @@ transform:scale(1.05);
 background:rgba(56,189,248,0.15);
 }
 
-/* FOOTER */
+/* =========================
+   Footer
+========================= */
 
 footer{
 text-align:center;
@@ -173,13 +190,13 @@ background:#020617;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<nav>
+<!-- ================= Navbar ================= -->
 
+<nav>
 <h2>Mayush</h2>
 
 <div>
@@ -188,8 +205,9 @@ background:#020617;
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
-
 </nav>
+
+<!-- ================= Hero ================= -->
 
 <div class="hero">
 
@@ -203,20 +221,22 @@ background:#020617;
 
 </div>
 
+<!-- ================= About ================= -->
+
 <section id="about">
 
 <h2>About Me</h2>
 
 <div class="card">
-
 <p>
 I am Mayush, a BITM student passionate about web development,
 technology and building modern digital products.
 </p>
-
 </div>
 
 </section>
+
+<!-- ================= Skills ================= -->
 
 <section id="skills">
 
@@ -243,73 +263,69 @@ JavaScript
 
 </section>
 
+<!-- ================= Projects ================= -->
+
 <section id="projects">
 
 <h2>Projects</h2>
 
 <div class="project">
-
 <h3>Portfolio Website</h3>
 <p>A modern portfolio showcasing my skills.</p>
-
 </div>
 
 <div class="project">
-
 <h3>Future Projects</h3>
 <p>More projects will be added here.</p>
-
 </div>
 
 </section>
+
+<!-- ================= Contact ================= -->
 
 <section id="contact">
 
 <h2>Contact</h2>
 
 <div class="card">
-
 <p>Email: mayush@email.com</p>
 <p>Phone: +977-XXXXXXXX</p>
 <p>Location: Nepal</p>
-
 </div>
 
 </section>
 
 <footer>
-
 <p>© 2026 Mayush Portfolio</p>
-
 </footer>
 
 <script>
 
-/* Typing animation */
+/* ================= Typing Animation ================= */
 
 const text = "Future Web Developer";
 let index = 0;
+const typingElement = document.getElementById("typing");
 
 function type(){
-document.getElementById("typing").innerHTML += text.charAt(index);
-index++;
-
 if(index < text.length){
+typingElement.innerHTML += text.charAt(index);
+index++;
 setTimeout(type,80);
 }
 }
 
 type();
 
-/* Skill bar animation */
+/* ================= Skill Bar Animation ================= */
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-document.querySelectorAll(".progress").forEach(bar=>{
-bar.style.width = bar.getAttribute("data-width");
-})
+document.querySelectorAll(".progress").forEach(bar => {
+bar.style.width = bar.dataset.width;
+});
 
-})
+});
 
 </script>
 
