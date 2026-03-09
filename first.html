@@ -11,12 +11,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: "Segoe UI", sans-serif;
+font-family:Segoe UI, sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#0f172a,#1e293b,#020617);
+background:linear-gradient(135deg,#0f172a,#020617);
 color:white;
 }
 
@@ -25,9 +25,8 @@ color:white;
 nav{
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(0,0,0,0.3);
+padding:18px 8%;
+background:rgba(0,0,0,0.4);
 backdrop-filter:blur(10px);
 position:sticky;
 top:0;
@@ -53,26 +52,25 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
 }
 
 .hero h1{
 font-size:55px;
 }
 
-.hero span{
+.highlight{
 color:#38bdf8;
 }
 
-.hero p{
-margin-top:15px;
-font-size:20px;
+.typing{
+font-size:22px;
+margin-top:10px;
 color:#cbd5f5;
 }
 
 .btn{
 margin-top:25px;
-padding:12px 26px;
+padding:12px 25px;
 background:#38bdf8;
 border:none;
 border-radius:6px;
@@ -80,7 +78,7 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
 max-width:1000px;
@@ -100,39 +98,43 @@ color:#38bdf8;
 background:rgba(255,255,255,0.05);
 padding:30px;
 border-radius:12px;
-margin-bottom:20px;
 backdrop-filter:blur(8px);
-border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 /* SKILLS */
 
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
+.skill{
+margin-bottom:20px;
 }
 
-.skill{
-background:rgba(255,255,255,0.08);
-padding:15px;
-border-radius:8px;
-text-align:center;
+.bar{
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress{
+height:10px;
+background:#38bdf8;
 }
 
 /* PROJECTS */
 
 .project{
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.05);
 padding:20px;
 border-radius:10px;
 margin-bottom:15px;
+transition:0.3s;
 }
 
-/* CONTACT */
-
-.contact p{
-margin-bottom:10px;
+.project:hover{
+transform:scale(1.03);
 }
 
 /* FOOTER */
@@ -141,10 +143,10 @@ footer{
 text-align:center;
 padding:30px;
 background:#020617;
-margin-top:40px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -154,24 +156,21 @@ margin-top:40px;
 <h2>Mayush</h2>
 
 <div>
-
 <a href="#about">About</a>
-<a href="#education">Education</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
-
 </div>
 
 </nav>
 
 <div class="hero">
 
-<h1>Hello, I'm <span>Mayush</span></h1>
+<h1>Hello, I'm <span class="highlight">Mayush</span></h1>
 
-<p>BITM Student | Future Web Developer</p>
+<div class="typing" id="typing"></div>
 
-<p>Studying at KIST College & SS</p>
+<p>BITM Student at KIST College & SS</p>
 
 <button class="btn">Download Resume</button>
 
@@ -184,26 +183,10 @@ margin-top:40px;
 <div class="card">
 
 <p>
-I am Mayush, currently studying Bachelor in Information Technology
-Management (BITM). I enjoy learning web development, programming,
-and modern technologies.
+I am Mayush, currently studying Bachelor in Information Technology Management.
+I enjoy learning programming, web development, and modern technologies.
+My goal is to become a skilled software developer.
 </p>
-
-</div>
-
-</section>
-
-<section id="education">
-
-<h2>Education</h2>
-
-<div class="card">
-
-<p><strong>Degree:</strong> Bachelor in Information Technology Management</p>
-
-<p><strong>College:</strong> KIST College & SS</p>
-
-<p><strong>Interest:</strong> Technology, Programming, Web Development</p>
 
 </div>
 
@@ -213,13 +196,22 @@ and modern technologies.
 
 <h2>Skills</h2>
 
-<div class="skills">
+<div class="card">
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Git</div>
-<div class="skill">Computer Fundamentals</div>
+<div class="skill">
+HTML
+<div class="bar"><div class="progress" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+CSS
+<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="bar"><div class="progress" style="width:60%"></div></div>
+</div>
 
 </div>
 
@@ -248,7 +240,7 @@ and modern technologies.
 
 <h2>Contact</h2>
 
-<div class="card contact">
+<div class="card">
 
 <p>Email: mayush@email.com</p>
 <p>Phone: +977-XXXXXXXX</p>
@@ -263,6 +255,26 @@ and modern technologies.
 <p>© 2026 Mayush Portfolio</p>
 
 </footer>
+
+<script>
+
+/* Typing animation */
+
+const text = "Future Web Developer";
+let index = 0;
+
+function type(){
+document.getElementById("typing").innerHTML += text.charAt(index);
+index++;
+
+if(index < text.length){
+setTimeout(type,80);
+}
+}
+
+type();
+
+</script>
 
 </body>
 </html>
